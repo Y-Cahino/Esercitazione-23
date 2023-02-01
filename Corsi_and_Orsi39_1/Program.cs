@@ -12,6 +12,7 @@ namespace Corsi_and_Orsi39_1
         {
             //declare
             string[] a = new string[10];
+            int n=0;
             //menù
             Console.WriteLine("1 - Aggiunta nomi animali");
             Console.WriteLine("2 - Cancella nomi animali");
@@ -28,10 +29,11 @@ namespace Corsi_and_Orsi39_1
                 switch (scelta)
                 {
                     case 1:
-                        if (a.Length<10)
+                        Console.WriteLine("Inserire nome:");
+                        a[n] = Console.ReadLine();
+                        if (aggiunta(a, ref n);
                         {
-                            aggiunta(a);
-                            Console.WriteLine("Nome inserito correttamente");
+                                Console.WriteLine("Nome inserito correttamente");
                         }
                         else
                         {
@@ -43,12 +45,16 @@ namespace Corsi_and_Orsi39_1
 
         }
         //funzione di aggiunta
-        static void aggiunta(string []a, int n)
+        static bool aggiunta(string []a,ref int n)
         {
-            for (int i = 0; i < a.Length; i++)
+            while (a != null)
             {
-
+                for (n = 0; n < a.Length; n++)
+                {
+                    
+                }
             }
+            return 0;
         }
     }
 }
