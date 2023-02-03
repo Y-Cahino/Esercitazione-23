@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Corsi_and_Orsi39_1
 {
@@ -11,19 +11,36 @@ namespace Corsi_and_Orsi39_1
         static void Main(string[] args)
         {
             //declare
-            int dim = 0;
-            string[] a = new string[dim];
-            int n=0;
+            int dim;
+            
             string s;
             //grandezza array
             Console.WriteLine("Inserire grandezza array");
             dim=int.Parse(Console.ReadLine());
+            string[] a = new string[dim];
             //inserimento animali
             for (int i=0; i<dim; i++)
             {
                 Console.Clear();
                 Console.WriteLine("Inserisci un nome di animale");
                 a[i] = Console.ReadLine();
+                //interruzione prima del limite massimo
+                Console.WriteLine("Desideri continuare?");
+                int scelta2=int.Parse(Console.ReadLine());
+                switch scelta2
+                    {
+                    case 1:
+                        break;
+                }
+                //ciclo di interruzione
+                if()
+                {
+
+                }
+                else
+                {
+                    break;
+                }
             }
             //cancellamento console
             Console.Clear();
@@ -54,6 +71,22 @@ namespace Corsi_and_Orsi39_1
                         {
                             Console.WriteLine("Array pieno");
                         }
+                        break;
+                    case 2:
+                        Console.WriteLine("Inserire nom* da cancellare: ");
+                        s= Console.ReadLine();
+                        if(canc(ref a, s, ref dim))
+                        {
+                            Console.WriteLine("Element* eleminat*");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Elemento non presente");
+                        }
+                        break;
+
+                    case 3:
+                        bubblesort(dim, ref a);
                         break;
                 }
             } while (scelta != 0);
@@ -103,32 +136,29 @@ namespace Corsi_and_Orsi39_1
             }
             return esiste;
         }
-        // Funzione per riempire il vettore con numeri casuali
-
-        void riempi(ref string []a, ref int n, int max)
+       //funzione bubblesort
+       static int bubblesort(int dim, ref string []a)
         {
-            int conta;
-            srand(time(0));
-            for (conta = 0; conta < n; conta++)
+            string s;
+            //ciclo per ordinare
+            for(int i=0;i<dim;i++)
             {
-                a[conta] = ();
-            }
-        }
-
-        // Funzione per ordinare il vettore utilizzando il metodo Shell Sort
-
-        void ShellSort(ref string []a, ref int n)
-        {
-            for (int gap = n / 2; gap > 0; gap /= 2)    // inizializzazione del gap
-            {
-                for (int i = gap; i < n; i++)       // confronto e scambio degli elementi all'interno del sottogruppo
+                //trasferisco il primo carattere di ogni stringa in una variabile per ordinare
+                int o1=(int)a[i].FirstOrDefault();
+                int o2 = (int)a[i+1].FirstOrDefault();
+                Console.WriteLine(o1);
+                Console.WriteLine(o2);
+                Thread.Sleep(1000);
+                //ciclo di controllo
+                if (o1 > o2)
                 {
-                    string temp = a[i];      // salvataggio dell'elemento corrente
-                    int j;
-                    for (j = i; j >= gap && vet[j - gap] > temp; j -= gap
-            
-        }
+                    //scambio dei valori
+                    s = a[i];
+                    a[i] = a[i + 1];
+                    a[i + 1] = s;
+                }
             }
+            return 0;
         }
 
 
